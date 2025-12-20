@@ -1,0 +1,11 @@
+function insertionSort(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let currentValue = arr[i];
+    for (let j = i - 1; j >= 0 && arr[j] > currentValue; j--) {
+      arr[j + 1] = arr[j];
+    }
+    arr[j + 1] = currentValue;
+  }
+}
+console.log(insertionSort([4, 20, 12, 10, 7, 9]));
+//len 6 -> arr[5]
