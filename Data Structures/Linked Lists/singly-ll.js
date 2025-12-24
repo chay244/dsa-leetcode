@@ -28,7 +28,7 @@ class SinglyLinkedList {
   unshift(val) {
     let newNode = new Node(val);
     if (!this.head) {
-      this.head = this.tail = node;
+      this.head = this.tail = newNode;
     } else {
       newNode.next = this.head;
       this.head = newNode;
@@ -50,10 +50,11 @@ class SinglyLinkedList {
     this.tail.next = null;
     this.length--;
     if (this.length === 0) {
-      thie.head = this.tail = null;
+      this.head = this.tail = null;
     }
     return currentNode;
   }
+  // 1 2 3 4 5
 
   shift() {
     if (!this.head) return undefined;
@@ -74,6 +75,8 @@ class SinglyLinkedList {
     }
     return currentNode;
   }
+
+  // A B C
 
   set(val, index) {
     let foundNode = this.get(index);
@@ -130,15 +133,15 @@ class SinglyLinkedList {
     let next;
     let prv = null;
     for (let i = 0; i < this.length; i++) {
-        next = node.next;
-        node.next = prv;
-        prv = node;
-        node = next;
+      next = node.next;
+      node.next = prv;
+      prv = node;
+      node = next;
     }
   }
-//   4. 6. 7. 8. 
-//   tn       h
-//   
+  //   4. 6. 7. 8.
+  //   tn       h
+  //
 }
 
 let a = new SinglyLinkedList();
